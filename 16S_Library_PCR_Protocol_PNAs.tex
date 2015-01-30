@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb} %for low tilde
+\usepackage{amsmath}
+\usepackage{dirtytalk} %quotations
+\usepackage{enumitem} %for continuing enumerated lists
+\usepackage{fancyhdr}
+\usepackage{gensymb} %for symbols such as \degree
+\usepackage{graphicx}
+\usepackage{hyperref} %for hyperlinks
+
+\pagestyle{fancy}
+
+\lhead{Hannah Holland-Moritz}
+\chead{16S Library Protocol - PNA Blockers}
+\rhead{\today}
+
+
+\begin{document}
+
+\begin{center}
+\textbf{\large{16S Library PCR Protocol with PNA Blockers}}
+\break
+
+\emph{This protocol is a modified version of the \href{http://www.earthmicrobiome.org/emp-standard-protocols/16s/}{Earth Microbiome Project's PCR protocol} and the JGI's PNA PCR Protocol.}
+\end{center}
+
+\noindent{\textbf{Notes:}}
+There are 25 each of forward and reverse primers that can be combined to make 625 total combinations. The primers are at 10uM each and are mixed in equal parts to create the 10uM combinations. \\
+
+\noindent{\textbf{1X Recipe:}} \\
+\hfill
+22.5 $\mu$L of Invitrogen Platinum SuperMix \\
+\hfill
+1.25 $\mu$L of Primer Mix (10$\mu$M)\\
+\hfill
+0.62 $\mu$L of PNA chloroplast blocker ($\sim50\mu$M)\\
+\hfill
+0.62 $\mu$L of PNA mitochondria blocker ($\sim50\mu$M)\\
+\hfill
+1.0-5.0 $\mu$L of template DNA
+\\
+\\
+\noindent{\textbf{Total:} 26-30$\mu$L}
+\\
+\rule{\textwidth}{1pt} %draws line across page that stops at margins
+\noindent{\textbf{Protocol:}}
+\medskip \break
+\noindent{\emph{PCR}}
+\begin{enumerate}
+\item Amplify samples in triplicate, meaning each sample will be amplified in 3 replicate 25 $\mu$L PCR reactions.
+\item Combine the triplicate PCR reactions for each sample into a single volume. Combination will result in a total of 75 $\mu$L of amplicon for each sample. Do NOT combine amplicons from different samples at this point.
+\item Run 5 $\mu$l of amplicons for each sample on an agarose gel to verify amplification. Expected band size for roughly 300-400 bp
+\end{enumerate}
+\noindent{\emph{Clean-up}}
+\begin{enumerate}[resume]
+\item{Clean PCR reactions with magnetic beads. See \say{Magnetic-bead PCR Cleaning Protocol} for an example protocol.}
+\item Quantify amplicons with Qubit.
+\end{enumerate}
+\emph{Pooling}
+\begin{enumerate}[resume]
+\item Combine an equal amount of amplicon from each sample into a single, sterile tube. Generally 240 ng of DNA per sample are pooled. However, higher amounts can be used if the final pool will be gel-isolated or when working with low biomass samples.
+\emph{Note:} When working with multiple plates of samples, it is typical to produce a single tube of amplicons for each plate of samples.
+\item If spurious bands were present on gel (in step 3), half of the final pool can be run on a gel and then gel-extracted to select only the target bands.*
+\\
+\\
+*We routinely see high molecular-weight bands or smears in the gel. We use the Pippin prep gel from Sage Science (\href{http://www.sagescience.com/products/pippin-prep/}{http://www.sagescience.com/products/pippin-prep/}) to select the correct band size.
+\item Measure concentration and 260/280 of final pool that has been cleaned. For best results the 260/280 should be between 1.8-2.0.
+\item Send an aliquot for sequencing along with sequencing primers.
+\end{enumerate}
+\rule{\textwidth}{1pt} %draws line across page that stops at margins
+\textbf{Thermocycler Conditions:}
+\\
+\\
+\emph{For 96 well thermocyclers:}
+\begin{enumerate}
+\item 94\degree C 3 minutes
+\item 94\degree C 45 seconds
+\item 50\degree C 60 seconds
+\item 72\degree C 90 seconds
+\item Repeat steps 2-4 35 times
+\item 72\degree C 10 minutes
+\item 4\degree C HOLD
+\end{enumerate}
+\emph{For 384 well thermocyclers:}
+\begin{enumerate}
+\item 94\degree C 3 minutes
+\item 94\degree C 60 seconds
+\item 50\degree C 60 seconds
+\item 72\degree C 105 seconds
+\item Repeat steps 2-4 35 times
+\item 72\degree C 10 minutes
+\item 4\degree C HOLD
+\end{enumerate}
+
+
+\end{document}
